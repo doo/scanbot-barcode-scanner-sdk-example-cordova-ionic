@@ -28,13 +28,13 @@ Install node modules:
 
 Install Cordova platforms and plugins (defined in the `config.xml` of this app):
 
-`cordova prepare`
+`ionic cordova prepare`
 
 Check installed platforms and plugins:
 
-`cordova platform ls`
+`ionic cordova platform ls`
 
-`cordova plugin ls`
+`ionic cordova plugin ls`
 
 You should see *android* and *ios* as installed platforms and *cordova-plugin-scanbot-barcode-scanner* 
 as installed plugins. 

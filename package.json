@@ -31,7 +31,7 @@
     "cordova-plugin-androidx-adapter": "^1.1.0",
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-file": "^6.0.2",
-    "cordova-plugin-scanbot-barcode-scanner": "^0.9.0-beta2",
+    "cordova-plugin-scanbot-barcode-scanner": "^1.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
