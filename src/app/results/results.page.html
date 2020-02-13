@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Barcode Results</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+    <ion-list>
+      <ion-list-header>
+        Detected Barcodes:
+      </ion-list-header>
+      <ion-item *ngFor="let barcode of resultsRepo.barcodeResult.barcodes">
+        <ion-label>
+          <h3>Type: {{ barcode.type }}</h3>
+          <p>Value: {{ barcode.text }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div *ngIf="snappedBarcodeImageUri">
+      <p>Snapped Image:</p>
+      <img [src]="snappedBarcodeImageUri" style="width: 60%" />
+    </div>
+
+  </div>
+</ion-content>
