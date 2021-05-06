@@ -7,6 +7,7 @@ import { Camera as ImagePicker } from '@ionic-native/camera/ngx';
 import ScanbotBarcodeSDK, {
   BarcodeScannerConfiguration,
   BarcodeResult,
+  BatchBarcodeScannerConfiguration,
 } from 'cordova-plugin-scanbot-barcode-scanner';
 
 import { BarcodeResultsRepository } from '../shared/barcode-results.repository';
@@ -35,11 +36,49 @@ export class HomePage {
       barcodeFormats: (qrCodesOnly ? ['QR_CODE'] : ['ALL_FORMATS']),
       finderTextHint: (qrCodesOnly ? 'Please align the QR code in the frame above to scan it.' :
           'Please align any supported 1D or 2D barcode in the frame above to scan it.'),
-      // see further customization configs...
+      // See further customization configs...
+      
+      // enableGS1Decoding: false,
+      // minimum1DBarcodesQuietZone: 10,
+      // minimumTextLength: 2,
+      // maximumTextLength: 11,
+      // cameraZoomFactor: 1,
+      // finderAspectRatio: {
+      //   width: 2,
+      //   height: 1
+      // }
     };
 
     try {
       const result = await this.barcodeSDK.startBarcodeScanner(config);
+      if (result.status === 'OK') {
+        this.showBarcodeResults(result);
+      }
+    } catch (e) {
+      alert(JSON.stringify(e));
+    }
+  }
+
+  async startBatchBarcodeScanner() {
+    if (!(await this.checkLicense())) { return; }
+
+    const config: BatchBarcodeScannerConfiguration = {
+      finderLineColor: '#ff0000',
+      cancelButtonTitle: 'Cancel',
+      // See further customization configs...
+
+      // enableGS1Decoding: false,
+      // minimum1DBarcodesQuietZone: 10,
+      // minimumTextLength: 2,
+      // maximumTextLength: 11,
+      // finderAspectRatio: {
+      //   width: 2,
+      //   height: 1
+      // }
+    }
+
+    try {
+      const result = await this.barcodeSDK.startBatchBarcodeScanner(config);
       if (result.status === 'OK') {
         this.showBarcodeResults(result);
       }
