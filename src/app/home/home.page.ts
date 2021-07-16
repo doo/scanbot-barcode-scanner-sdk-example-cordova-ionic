@@ -37,7 +37,7 @@ export class HomePage {
       finderTextHint: (qrCodesOnly ? 'Please align the QR code in the frame above to scan it.' :
           'Please align any supported 1D or 2D barcode in the frame above to scan it.'),
       // See further customization configs...
-      
+
       // enableGS1Decoding: false,
       // minimum1DBarcodesQuietZone: 10,
       // minimumTextLength: 2,
@@ -65,6 +65,7 @@ export class HomePage {
     const config: BatchBarcodeScannerConfiguration = {
       finderLineColor: '#ff0000',
       cancelButtonTitle: 'Cancel',
+      // barcodeFormats: ['DATA_MATRIX', 'QR_CODE', ...],
       // See further customization configs...
 
       // enableGS1Decoding: false,
@@ -75,7 +76,7 @@ export class HomePage {
       //   width: 2,
       //   height: 1
       // }
-    }
+    };
 
     try {
       const result = await this.barcodeSDK.startBatchBarcodeScanner(config);
