@@ -19,7 +19,7 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
-    "@ionic-native/camera": "^5.21.5",
+    "@ionic-native/camera": "^5.36.0",
     "@ionic-native/core": "^5.21.5",
     "@ionic-native/file": "^5.21.5",
     "@ionic-native/splash-screen": "^5.0.0",
