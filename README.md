@@ -63,3 +63,6 @@ After the trial period has expired all Scanbot Barcode Scanner SDK functions as 
 
 To get an unrestricted, "no-strings-attached" 30-day trial license, please submit the 
 [Trial License Form](https://scanbot.io/en/sdk/demo/trial) on our website.
+
+
+
