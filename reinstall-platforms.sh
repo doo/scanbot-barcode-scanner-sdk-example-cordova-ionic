@@ -15,7 +15,7 @@ rm package-lock.json
 
 npm install
 
-ionic cordova platform add ios@6.1.1;
+ionic cordova platform add ios@6.2.0;
 ionic cordova platform add android@9.0.0;
 
 
