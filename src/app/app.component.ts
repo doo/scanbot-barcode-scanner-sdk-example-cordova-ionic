@@ -49,6 +49,7 @@ export class AppComponent {
     try {
       const config: ScanbotBarcodeSDKConfiguration = {
         licenseKey: this.myLicenseKey,
+        enableNativeLogging: !environment.production,
         loggingEnabled: !environment.production, // Disable logging in production builds for security and performance reasons!
         // optional custom storageBaseDirectory for snapped images - see the comments below.
         storageBaseDirectory: this.getDemoStorageBaseDirectory()
