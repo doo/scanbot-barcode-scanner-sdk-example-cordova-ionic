@@ -15,7 +15,7 @@ It provides functionality for scanning 1D and 2D barcodes, like EAN, UPC, QR cod
 For more details visit our website https://scanbot.io
 
 
-## How to run this app
+## How to run this app 
 
 Install the latest versions of [Cordova CLI](https://cordova.apache.org) and [Ionic CLI](https://ionicframework.com).
 Fetch this repository and navigate to the project directory.
