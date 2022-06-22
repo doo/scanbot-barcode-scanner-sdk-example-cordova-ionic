@@ -38,7 +38,7 @@ export class HomePage {
           'Please align any supported 1D or 2D barcode in the frame above to scan it.'),
       // See further customization configs...
 
-      // enableGS1Decoding: false,
+      // gs1DecodingEnabled: false,
       // minimum1DBarcodesQuietZone: 10,
       // minimumTextLength: 2,
       // maximumTextLength: 11,
@@ -68,7 +68,7 @@ export class HomePage {
       // barcodeFormats: ['DATA_MATRIX', 'QR_CODE', ...],
       // See further customization configs...
 
-      // enableGS1Decoding: false,
+      // gs1DecodingEnabled: false,
       // minimum1DBarcodesQuietZone: 10,
       // minimumTextLength: 2,
       // maximumTextLength: 11,
