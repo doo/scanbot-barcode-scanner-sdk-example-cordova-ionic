@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { BarcodeResultsRepository } from '../shared/barcode-results.repository';
+import { ByteArrayUtils } from '../utils/byte-array-utils';
 
 @Component({
   selector: 'app-results',
@@ -20,6 +21,10 @@ export class ResultsPage implements OnInit {
       this.snappedBarcodeImageUri = this.sanitizeFileUri(this.resultsRepo.barcodeResult.imageFileUri);
     }
   }
+  
+  rawBytesToHex    (rawBytes: number[]): string { return ByteArrayUtils.toHex(rawBytes); }
+  rawBytesToString (rawBytes: number[]): string { return ByteArrayUtils.toString(rawBytes); }
+  rawBytesToBase64 (rawBytes: number[]): string { return ByteArrayUtils.toBase64(rawBytes); }
 
   private sanitizeFileUri(fileUri: string): string {
     // see https://ionicframework.com/docs/building/webview/#file-protocol

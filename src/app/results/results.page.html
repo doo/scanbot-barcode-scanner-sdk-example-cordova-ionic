@@ -18,6 +18,20 @@
         <ion-label>
           <h3>Type: {{ barcode.type }}</h3>
           <p>Value: {{ barcode.text }}</p>
+          <div *ngIf="barcode.rawBytes">
+            <!-- <h3>Raw Bytes:</h3>
+            <br>
+            <ion-textarea>{{ barcode.rawBytes }}</ion-textarea>
+            <h3>Raw Bytes (HEX):</h3>
+            <br>
+            <ion-textarea>{{ rawBytesToHex(barcode.rawBytes) }}</ion-textarea> -->
+            <h3>Raw Bytes (STRING):</h3>
+            <br>
+            <ion-textarea>{{ rawBytesToString(barcode.rawBytes) }}</ion-textarea>
+            <!-- <h3>Raw Bytes (BASE64):</h3>
+            <br>
+            <ion-textarea>{{ rawBytesToBase64(barcode.rawBytes) }}</ion-textarea> -->
+          </div>
         </ion-label>
       </ion-item>
     </ion-list>

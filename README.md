@@ -1,7 +1,6 @@
 # Scanbot Barcode Scanner SDK Cordova Example
 
-This example app demonstrates how to integrate the Scanbot Barcode Scanner SDK Cordova Plugin
-with [Cordova](https://cordova.apache.org) and [Ionic Framework](https://ionicframework.com).
+This example app demonstrates how to integrate the [Scanbot Barcode Scanner SDK Cordova Plugin](https://scanbot.io/developer/cordova-barcode-scanner-plugin/) with [Cordova](https://cordova.apache.org) and [Ionic Framework](https://ionicframework.com).
 
 The Scanbot Barcode Scanner SDK Cordova Plugin is available as [npm package](https://www.npmjs.com/package/cordova-plugin-scanbot-barcode-scanner).
 
@@ -11,8 +10,9 @@ For more details about the Plugin please see this [documentation](https://docs.s
 ## What is Scanbot Barcode Scanner SDK?
 
 The Scanbot Barcode Scanner SDK brings barcode scanning capabilities to your mobile apps.
-It provides functionality for scanning 1D and 2D barcodes, like EAN, UPC, QR code, Data Matrix, PDF 417, etc.
-For more details visit our website https://scanbot.io
+It provides functionality for scanning [1D](https://scanbot.io/products/barcode-software/1d-barcode-scanner/) and [2D](https://scanbot.io/products/barcode-software/2d-barcode-scanner/) barcodes, like [EAN](https://scanbot-sdk.com/products/barcode-software/1d-barcode-scanner/ean/), [UPC](https://scanbot.io/products/barcode-software/1d-barcode-scanner/upc/), [QR code](https://scanbot.io/products/barcode-software/2d-barcode-scanner/qr-code/), [Data Matrix](https://scanbot.io/products/barcode-software/2d-barcode-scanner/data-matrix/), [PDF-417](https://scanbot.io/products/barcode-software/2d-barcode-scanner/pdf417/), etc.
+
+For more details check out our blog post [Types of barcodes](https://scanbot.io/blog/types-of-barcodes/).
 
 
 ## How to run this app
