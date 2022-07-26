@@ -33,7 +33,7 @@ export class HomePage {
       barcodeImageGenerationType: (saveImage ? 'FROM_VIDEO_FRAME' : 'NONE'),
       finderLineColor: '#ff0000',
       cancelButtonTitle: 'Cancel',
-      barcodeFormats: (qrCodesOnly ? ['QR_CODE'] : ['ALL_FORMATS']),
+      barcodeFormats: (qrCodesOnly ? ['QR_CODE'] : []),
       finderTextHint: (qrCodesOnly ? 'Please align the QR code in the frame above to scan it.' :
           'Please align any supported 1D or 2D barcode in the frame above to scan it.'),
       // See further customization configs...
