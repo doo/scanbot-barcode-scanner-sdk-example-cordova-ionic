@@ -51,6 +51,7 @@ export class HomePage {
 
     try {
       const result = await this.barcodeSDK.startBarcodeScanner(config);
+
       if (result.status === 'OK') {
         this.showBarcodeResults(result);
       }
