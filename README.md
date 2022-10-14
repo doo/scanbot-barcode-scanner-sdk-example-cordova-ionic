@@ -4,6 +4,8 @@ This example app demonstrates how to integrate the [Scanbot Barcode Scanner SDK 
 
 The Scanbot Barcode Scanner SDK Cordova Plugin is available as [npm package](https://www.npmjs.com/package/cordova-plugin-scanbot-barcode-scanner).
 
+Our branch strip_ios_simulator_arch demonstrates how to strip the x86_64 simulator architecture from the iOS build.
+
 For more details about the Plugin please see this [documentation](https://docs.scanbot.io/barcode-scanner-sdk/cordova/introduction/).
 
 
