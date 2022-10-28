@@ -17,7 +17,7 @@
       <ion-item *ngFor="let barcode of resultsRepo.barcodeResult.barcodes">
         <ion-label>
           <h3>Type: {{ barcode.type }}</h3>
-          <p>Value: {{ barcode.text }}</p>
+          <p>Value: {{ barcode.textWithExtension }}</p>
           <div *ngIf="barcode.rawBytes">
             <!-- <h3>Raw Bytes:</h3>
             <br>
