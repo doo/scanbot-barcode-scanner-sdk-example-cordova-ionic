@@ -107,11 +107,7 @@ export class HomePage {
     if (!(await this.checkLicense())) { return; }
 
     try {
-      const detectResult = await this.barcodeSDK.detectBarcodesOnImage({
-        imageFileUri: pickedImageFileUri, 
-        barcodeFormats: ['MSI_PLESSEY'], 
-        // gs1DecodingEnabled:true, 
-        msiPlesseyChecksumAlgorithm: 'Mod10'});
+      const detectResult = await this.barcodeSDK.detectBarcodesOnImage({ imageFileUri: pickedImageFileUri });
       if (detectResult.status === 'OK' && detectResult.barcodes) {
         this.showBarcodeResults(detectResult);
       } else {
