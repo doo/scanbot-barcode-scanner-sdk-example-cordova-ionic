@@ -53,7 +53,7 @@ For more details please refer to the SDK documentation.
 
 ## Documentation
 
-👉 [Scanbot Barcode Scanner SDK documentation](https://docs.scanbot.io/barcode-scanner-sdk/windows/introduction/)
+👉 [Scanbot Barcode Scanner SDK documentation](https://docs.scanbot.io/barcode-scanner-sdk/cordova/introduction/)
 
 ## How to run this example app?
 
