@@ -1,9 +1,9 @@
-Open Source libraries used in the Scanbot Barcode Scanner SDK for Cordova version 3.3.4:
+Open Source libraries used in the Scanbot Barcode Scanner SDK for Cordova version 3.4.0:
 
 ------------------------------------------------------------------------------------------------------------------------
 
 ```text
-Open Source libraries used in the Scanbot Barcode Scanner SDK for iOS version 3.3.0:
+Open Source libraries used in the Scanbot Barcode Scanner SDK for iOS version 3.4.0:
 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
@@ -1975,7 +1975,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ------------------------------------------------------------------------------------------------------------------------
 
-Open Source libraries used in the Scanbot Barcode Scanner SDK for Android version 3.3.0
+Open Source libraries used in the Scanbot Barcode Scanner SDK for Android version 3.4.0
 
 CWAC-Camera
 
