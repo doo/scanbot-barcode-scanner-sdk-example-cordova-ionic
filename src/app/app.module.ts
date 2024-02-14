@@ -14,7 +14,6 @@ import { BarcodeResultsRepository } from './shared/barcode-results.repository';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,

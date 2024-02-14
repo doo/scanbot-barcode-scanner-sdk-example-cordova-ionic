@@ -14,7 +14,7 @@
       <ion-list-header>
         Detected Barcodes:
       </ion-list-header>
-      <ion-item *ngFor="let barcode of resultsRepo.barcodeResult.barcodes">
+      <ion-item *ngFor="let barcode of resultsRepo.barcodeScannerResult.barcodes">
         <ion-label>
           <h3>Type: {{ barcode.type }}</h3>
           <p>Value: {{ barcode.textWithExtension }}</p>
@@ -35,11 +35,6 @@
         </ion-label>
       </ion-item>
     </ion-list>
-
-    <div *ngIf="snappedBarcodeImageUri">
-      <p>Snapped Image:</p>
-      <img [src]="snappedBarcodeImageUri" style="width: 60%" />
-    </div>
 
   </div>
 </ion-content>

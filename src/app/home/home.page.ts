@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 import { Camera as ImagePicker } from '@ionic-native/camera/ngx';
 
 import ScanbotBarcodeSDK, {
   BarcodeScannerConfiguration,
-  BarcodeResult,
+  BarcodeScannerResult,
   BatchBarcodeScannerConfiguration,
 } from 'cordova-plugin-scanbot-barcode-scanner';
 
@@ -21,24 +20,22 @@ export class HomePage {
 
   private barcodeSDK = ScanbotBarcodeSDK.promisify();
 
-  constructor(private platform: Platform,
-              private router: Router,
-              private resultsRepo: BarcodeResultsRepository,
-              private imagePicker: ImagePicker) { }
+  constructor(private router: Router,
+    private resultsRepo: BarcodeResultsRepository,
+    private imagePicker: ImagePicker) { }
 
-  async startBarcodeQrCodeScanner(saveImage: boolean = false, qrCodesOnly: boolean = false) {
+  async startBarcodeQrCodeScanner(qrCodesOnly: boolean = false) {
     if (!(await this.checkLicense())) { return; }
 
     const config: BarcodeScannerConfiguration = {
-      barcodeImageGenerationType: (saveImage ? 'FROM_VIDEO_FRAME' : 'NONE'),
       finderLineColor: '#ff0000',
       cancelButtonTitle: 'Cancel',
       barcodeFormats: (qrCodesOnly ? ['QR_CODE'] : []),
       finderTextHint: (qrCodesOnly ? 'Please align the QR code in the frame above to scan it.' :
-          'Please align any supported 1D or 2D barcode in the frame above to scan it.'),
+        'Please align any supported 1D or 2D barcode in the frame above to scan it.'),
       // See further customization configs...
 
-      // gs1DecodingEnabled: false,
+      // gs1HandlingMode: 'PARSE',
       // minimum1DBarcodesQuietZone: 10,
       // minimumTextLength: 2,
       // maximumTextLength: 11,
@@ -52,8 +49,8 @@ export class HomePage {
     try {
       const result = await this.barcodeSDK.startBarcodeScanner(config);
 
-      if (result.status === 'OK') {
-        this.showBarcodeResults(result);
+      if (result.status === 'OK' && result.result) {
+        this.showBarcodeResults(result.result);
       }
     } catch (e) {
       alert(JSON.stringify(e));
@@ -69,7 +66,7 @@ export class HomePage {
       // barcodeFormats: ['DATA_MATRIX', 'QR_CODE', ...],
       // See further customization configs...
 
-      // gs1DecodingEnabled: false,
+      // gs1HandlingMode: 'PARSE',
       // minimum1DBarcodesQuietZone: 10,
       // minimumTextLength: 2,
       // maximumTextLength: 11,
@@ -81,8 +78,8 @@ export class HomePage {
 
     try {
       const result = await this.barcodeSDK.startBatchBarcodeScanner(config);
-      if (result.status === 'OK') {
-        this.showBarcodeResults(result);
+      if (result.status === 'OK' && result.result) {
+        this.showBarcodeResults(result.result);
       }
     } catch (e) {
       alert(JSON.stringify(e));
@@ -108,8 +105,8 @@ export class HomePage {
 
     try {
       const detectResult = await this.barcodeSDK.detectBarcodesOnImage({ imageFileUri: pickedImageFileUri });
-      if (detectResult.status === 'OK' && detectResult.barcodes) {
-        this.showBarcodeResults(detectResult);
+      if (detectResult.status === 'OK' && detectResult.result) {
+        this.showBarcodeResults(detectResult.result);
       } else {
         alert('No barcodes or QR-codes detected on this image.');
       }
@@ -118,9 +115,11 @@ export class HomePage {
     }
   }
 
-  async showBarcodeResults(result: BarcodeResult) {
-    this.resultsRepo.barcodeResult = result;
-    await this.router.navigateByUrl('/results');
+  async showBarcodeResults(result: BarcodeScannerResult) {
+    if (result.barcodes.length > 0) {
+      this.resultsRepo.barcodeScannerResult = result;
+      await this.router.navigateByUrl('/results');
+    }
   }
 
   async getLicenseInfo() {
@@ -134,7 +133,7 @@ export class HomePage {
 
   async checkLicense() {
     const result = await this.barcodeSDK.getLicenseInfo();
-    if (result.isLicenseValid === true) {
+    if (result.result?.isLicenseValid === true) {
       // OK - we have a trial session, a valid trial license or valid production license.
       return true;
     }
