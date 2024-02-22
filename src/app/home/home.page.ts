@@ -49,8 +49,8 @@ export class HomePage {
     try {
       const result = await this.barcodeSDK.startBarcodeScanner(config);
 
-      if (result.status === 'OK' && result.result) {
-        this.showBarcodeResults(result.result);
+      if (result.status === 'OK') {
+        this.showBarcodeResults(result.data);
       }
     } catch (e) {
       alert(JSON.stringify(e));
@@ -78,8 +78,8 @@ export class HomePage {
 
     try {
       const result = await this.barcodeSDK.startBatchBarcodeScanner(config);
-      if (result.status === 'OK' && result.result) {
-        this.showBarcodeResults(result.result);
+      if (result.status === 'OK') {
+        this.showBarcodeResults(result.data);
       }
     } catch (e) {
       alert(JSON.stringify(e));
@@ -105,20 +105,20 @@ export class HomePage {
 
     try {
       const detectResult = await this.barcodeSDK.detectBarcodesOnImage({ imageFileUri: pickedImageFileUri });
-      if (detectResult.status === 'OK' && detectResult.result) {
-        this.showBarcodeResults(detectResult.result);
-      } else {
-        alert('No barcodes or QR-codes detected on this image.');
+      if (detectResult.status === 'OK') {
+        this.showBarcodeResults(detectResult.data);
       }
     } catch (e) {
       alert(JSON.stringify(e));
     }
   }
 
-  async showBarcodeResults(result: BarcodeScannerResult) {
-    if (result.barcodes.length > 0) {
+  async showBarcodeResults(result?: BarcodeScannerResult) {
+    if (result?.barcodes && result.barcodes.length > 0) {
       this.resultsRepo.barcodeScannerResult = result;
       await this.router.navigateByUrl('/results');
+    } else {
+      alert('No barcodes or QR-codes detected');
     }
   }
 
@@ -133,7 +133,7 @@ export class HomePage {
 
   async checkLicense() {
     const result = await this.barcodeSDK.getLicenseInfo();
-    if (result.result?.isLicenseValid === true) {
+    if (result.data?.isLicenseValid === true) {
       // OK - we have a trial session, a valid trial license or valid production license.
       return true;
     }
