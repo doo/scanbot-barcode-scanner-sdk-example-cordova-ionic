@@ -76,7 +76,9 @@
       "cordova-plugin-file": {
         "ANDROIDX_WEBKIT_VERSION": "1.4.0"
       },
-      "cordova-plugin-scanbot-barcode-scanner": {}
+      "cordova-plugin-scanbot-barcode-scanner": {
+        "CAMERA_USAGE_DESCRIPTION": " "
+      }
     },
     "platforms": [
       "ios",
