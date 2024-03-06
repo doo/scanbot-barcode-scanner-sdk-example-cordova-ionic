@@ -20,6 +20,8 @@ export class HomePage {
 
   private barcodeSDK = ScanbotBarcodeSDK.promisify();
 
+  readonly currentYear = new Date().getFullYear();
+
   constructor(private router: Router,
     private resultsRepo: BarcodeResultsRepository,
     private imagePicker: ImagePicker) { }
