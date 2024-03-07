@@ -74,4 +74,35 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** scanbot-red **/
+  --ion-color-scanbot-red: #c8193c;
+  --ion-color-scanbot-red-rgb: 200, 25, 60;
+  --ion-color-scanbot-red-contrast: #ffffff;
+  --ion-color-scanbot-red-contrast-rgb: 255, 255, 255;
+  --ion-color-scanbot-red-shade: #b01635;
+  --ion-color-scanbot-red-tint: #ce3050;
+  --ion-color-scanbot-red-light: #f6859c;
+
+  --ion-toolbar-background: var(--ion-color-scanbot-red);
+  --ion-toolbar-background-rgb: var(--ion-color-scanbot-red-rgb);
+  --ion-toolbar-background-contrast: var(--ion-color-scanbot-red-contrast);
+  --ion-toolbar-background-contrast-rgb: var(--ion-color-scanbot-red-contrast-rgb);
+  --ion-toolbar-background-shade: var(--ion-color-scanbot-red-shade);
+  --ion-toolbar-background-tint: var(--ion-color-scanbot-red-tint);
+
+  --ion-toolbar-color: #ffffff;
+  --ion-toolbar-color-rgb: 255, 255, 255;
+  --ion-toolbar-color-contrast: #000000;
+  --ion-toolbar-color-contrast-rgb: 0, 0, 0;
+  --ion-toolbar-color-shade: #e0e0e0;
+  --ion-toolbar-color-tint: #ffffff;
+}
+
+html {
+  /* 
+   * For more information on dynamic font scaling, visit the documentation:
+   * https://ionicframework.com/docs/layout/dynamic-font-scaling
+   */
+  --ion-dynamic-font: var(--ion-default-dynamic-font);
 }
