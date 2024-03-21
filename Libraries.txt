@@ -3,7 +3,7 @@ Open Source libraries used in the Scanbot Barcode Scanner SDK for Cordova versio
 ------------------------------------------------------------------------------------------------------------------------
 
 ```text
-Open Source libraries used in the Scanbot Barcode Scanner SDK for iOS version 4.2.1:
+Open Source libraries used in the Scanbot Barcode Scanner SDK for iOS version 4.2.2:
 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
