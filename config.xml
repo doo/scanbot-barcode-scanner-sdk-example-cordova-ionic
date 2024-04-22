@@ -109,5 +109,5 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-camera" spec="7.0.0" />
     <plugin name="cordova-plugin-file" spec="8.0.1" />
-    <plugin name="cordova-plugin-scanbot-barcode-scanner" spec="4.2.0-beta.4" />
+    <plugin name="cordova-plugin-scanbot-barcode-scanner" spec="4.2.0" />
 </widget>
