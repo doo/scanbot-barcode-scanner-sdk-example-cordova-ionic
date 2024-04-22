@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 import { environment } from '../environments/environment';
-import ScanbotBarcodeSDK, { ScanbotBarcodeSDKConfiguration } from 'cordova-plugin-scanbot-barcode-scanner';
+import ScanbotBarcodeSDK, { ScanbotBarcodeSdkConfiguration } from 'cordova-plugin-scanbot-barcode-scanner';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +29,6 @@ export class AppComponent {
 
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private file: File
   ) {
@@ -39,15 +37,14 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      this.statusBar.styleLightContent();
       this.initScanbotBarcodeSDK();
     });
   }
 
   private async initScanbotBarcodeSDK() {
     try {
-      const config: ScanbotBarcodeSDKConfiguration = {
+      const config: ScanbotBarcodeSdkConfiguration = {
         licenseKey: this.myLicenseKey,
         enableNativeLogging: !environment.production,
         loggingEnabled: !environment.production, // Disable logging in production builds for security and performance reasons!
@@ -60,7 +57,7 @@ export class AppComponent {
     }
   }
 
-  private getDemoStorageBaseDirectory(): string {
+  private getDemoStorageBaseDirectory(): string | undefined {
     // tslint:disable:max-line-length
     // !! Please note !!
     // It is strongly recommended to use the default (secure) storage location of the Scanbot Barcode Scanner SDK.
@@ -87,7 +84,7 @@ export class AppComponent {
     } else if (this.platform.is('ios')) {
       return this.file.documentsDirectory + 'my-custom-storage';
     }
-    return null;
+    return undefined;
   }
 
 }
