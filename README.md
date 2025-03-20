@@ -73,7 +73,6 @@ If scanning failed, check the following:
 
 * Confirm that your app has the necessary permissions to use the camera.
 * Check if the correct barcode types are enabled in the SDK settings.
-* Verify that your Android support library project refs are correctly configured.
 
 ## Supported barcodes
 
