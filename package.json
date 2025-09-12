@@ -1,6 +1,6 @@
 {
   "name": "scanbot-barcode-scanner-sdk-example-cordova-ionic",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "author": "Scanbot SDK GmbH",
   "homepage": "https://scanbot.io/sdk",
   "scripts": {
@@ -46,7 +46,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "cordova-android": "^12.0.1",
+    "cordova-android": "^14.0.0",
     "cordova-ios": "^7.0.1",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "2.22.1",
